@@ -15,20 +15,19 @@ const ThemeBuutonArray = [
   { color: "#F0F2F5", CName: "light" },
 ];
 
-export default function SettingDrawer() {
-  function getLocalData() {
-    const LocalData = JSON.parse(localStorage.getItem("theme"));
-
-    if (LocalData) {
-      return LocalData;
-    } else {
-      localStorage.setItem(
-        "theme",
-        JSON.stringify({ selectedValue: "#295DD0", selectedMode: "#F0F2F5" })
-      );
-      return LocalData;
-    }
+function getLocalData() {
+  const LocalData = JSON.parse(localStorage.getItem("theme"));
+  if (LocalData) {
+    return LocalData;
+  } else {
+    localStorage.setItem(
+      "theme",
+      JSON.stringify({ selectedValue: "#295DD0", selectedMode: "#F0F2F5" })
+    );
+    return LocalData;
   }
+}
+export default function SettingDrawer() {
   const localStorageData = getLocalData();
 
   const [state, setState] = React.useState({

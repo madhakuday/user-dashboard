@@ -7,7 +7,7 @@ const PaymentCards = ({ Icon, num }) => {
   return (
     <>
       <Box
-        className="p-3 rounded-2xl flex items-center  md:w-2/5 w-full    sm:w-full x "
+        className="flex justify-between p-3 rounded-2xl flex items-center  md:w-2/5 w-full    sm:w-full x "
         style={{ border: "1px solid black" }}
       >
         <img src={masterCardLogo} alt="Logo" width="10%" />
