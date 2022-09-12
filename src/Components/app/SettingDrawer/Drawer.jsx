@@ -105,16 +105,16 @@ export default function SettingDrawer() {
           <Box className="p-2">
             <Typography className="text-center p-2">Theme</Typography>
             <Box>
-              {ThemeBuutonArray.map((theme) => {
+              {ThemeBuutonArray.map((theme, ind) => {
                 return (
-                  <>
+                  <React.Fragment key={ind}>
                     <Button
                       variant="outlined"
                       onClick={() => handleMode(theme.color)}
                     >
                       {theme.CName}
                     </Button>
-                  </>
+                  </React.Fragment>
                 );
               })}
             </Box>
@@ -124,9 +124,9 @@ export default function SettingDrawer() {
             <Typography className="text-center p-2">Color</Typography>
             <Box>
               <div>
-                {ColorBuutonArray.map((color) => {
+                {ColorBuutonArray.map((color, ind) => {
                   return (
-                    <>
+                    <React.Fragment key={ind}>
                       <Radio
                         {...controlProps(color.color)}
                         style={{ color: color.color }}
@@ -137,7 +137,7 @@ export default function SettingDrawer() {
                           },
                         }}
                       />
-                    </>
+                    </React.Fragment>
                   );
                 })}
               </div>

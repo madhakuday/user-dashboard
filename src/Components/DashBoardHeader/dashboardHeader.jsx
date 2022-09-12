@@ -1,11 +1,10 @@
 import { TextField } from "@mui/material";
-import { style } from "@mui/system";
+
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import {
   AccountCircleIcon,
-  SettingsSuggestIcon,
   NotificationsIcon,
   MenuIcon,
 } from "../MatrailIcons";
@@ -52,7 +51,7 @@ const DashboardHeader = ({ screenWidth, setScreenWidth }) => {
               }
             : {
                 backgroundColor: "transparent",
-                color: currMode == "#F0F2F5" ? "black" : "white",
+                color: currMode === "#F0F2F5" ? "black" : "white",
               }
         }
       >
@@ -84,16 +83,13 @@ const DashboardHeader = ({ screenWidth, setScreenWidth }) => {
                 InputLabelProps={{
                   zindex: 0,
                   style: {
-                    color: currMode == "#F0F2F5" ? "black" : "white",
+                    color: currMode === "#F0F2F5" ? "black" : "white",
                   },
                 }}
               />
             </div>
             <div className="cursor-pointer p-1 flex items-center justify-center">
               <AccountCircleIcon style={{ color: currTheme }} />
-            </div>
-            <div className="cursor-pointer p-1 flex items-center justify-center">
-              <SettingsSuggestIcon style={{ color: currTheme }} />
             </div>
             <div className="cursor-pointer p-1 flex items-center justify-center">
               <NotificationsIcon style={{ color: currTheme }} />

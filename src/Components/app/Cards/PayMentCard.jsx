@@ -7,7 +7,7 @@ const PaymentCards = ({ Icon, num }) => {
   return (
     <>
       <Box
-        className="flex justify-between p-3 rounded-2xl   items-center  md:w-2/5 w-full    sm:w-full x "
+        className="mt-2 md:mt-0 flex justify-between p-3 rounded-2xl   items-center  md:w-2/5 w-full    sm:w-full x "
         style={{ border: "1px solid black" }}
       >
         <img src={masterCardLogo} alt="Logo" width="10%" />
@@ -50,7 +50,7 @@ const PayMentCard = () => {
             </Button>
           </Box>
         </Box>
-        <Box className="flex justify-between p-2 md:justify-between xs:flex-col ">
+        <Box className="flex justify-between p-2  flex-col md:flex-row ">
           <PaymentCards num={7852} Icon={AddIcon} />
           <PaymentCards num={5248} Icon={CreateIcon} />
         </Box>

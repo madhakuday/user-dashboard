@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   HomeIcon,
   TableChartIcon,
@@ -26,7 +26,6 @@ const ListArray = [
 const AsideBar = ({ setScreenWidth }) => {
   const [navScreenWidth, setnavScreenWidth] = useState(window.innerWidth);
   const currTheme = useSelector((state) => state.theme.theme.theme);
-  const [hover, setHover] = useState(false);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -36,6 +35,7 @@ const AsideBar = ({ setScreenWidth }) => {
       setnavScreenWidth();
     });
   }, []);
+
   return (
     <>
       <div className="bg-neutral-700 h-full rounded-2xl relative transition-all ease-in-out duration-500">
@@ -88,7 +88,7 @@ const AsideBar = ({ setScreenWidth }) => {
                     onMouseLeave={(e) => {
                       e.target.style.backgroundColor = "";
                     }}
-                    className="mt-1 mb-1 p-2 flex item-center hover:bg-blue-600 rounded-lg cursor-pointer ease-in-out duration-300"
+                    className="mt-1 mb-1 p-2 flex item-center   rounded-lg cursor-pointer ease-in-out duration-300"
                   >
                     <p className="pr-2">{x.Icons}</p>
 
