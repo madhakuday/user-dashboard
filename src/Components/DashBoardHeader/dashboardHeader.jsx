@@ -36,7 +36,7 @@ const DashboardHeader = ({ screenWidth, setScreenWidth }) => {
   return (
     <>
       <div
-        className={`h-fit p-3  ease-in-out   li duration-100 ${
+        className={` h-fit p-3  ease-in-out   li duration-100 ${
           scrool >= 100 ? "sticky top-3  rounded-xl " : null
         }`}
         style={

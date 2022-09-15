@@ -18,7 +18,7 @@ const Profile = () => {
             </Box>
             <Grid container sx={{ flexGrow: 1 }} className="p-2" gap={2}>
               <Grid xs={12} md={5}>
-                <Box className="rounded-2xl p-3 bg-slate-300 h-full ">
+                <Box className="rounded-2xl p-3 bg-slate-300 h-full z">
                   <Typography className="text-center">Profile</Typography>
                   <Box
                     style={{

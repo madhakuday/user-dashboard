@@ -14,20 +14,19 @@ const ThemeBuutonArray = [
   { color: "#0f121c", CName: "dark" },
   { color: "#F0F2F5", CName: "light" },
 ];
-
-function getLocalData() {
-  const LocalData = JSON.parse(localStorage.getItem("theme"));
-  if (LocalData) {
-    return LocalData;
-  } else {
-    localStorage.setItem(
-      "theme",
-      JSON.stringify({ selectedValue: "#295DD0", selectedMode: "#F0F2F5" })
-    );
-    return LocalData;
-  }
-}
 export default function SettingDrawer() {
+  function getLocalData() {
+    const LocalData = JSON.parse(localStorage.getItem("theme"));
+    if (LocalData) {
+      return LocalData;
+    } else {
+      localStorage.setItem(
+        "theme",
+        JSON.stringify({ selectedValue: "#295DD0", selectedMode: "#F0F2F5" })
+      );
+      return LocalData;
+    }
+  }
   const localStorageData = getLocalData();
 
   const [state, setState] = React.useState({
@@ -72,6 +71,7 @@ export default function SettingDrawer() {
     name: "color-radio-button-demo",
     inputProps: { "aria-label": item },
   });
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -85,23 +85,23 @@ export default function SettingDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer("right", true)}>
-        <SettingsIcon
-          style={{ color: currTheme }}
-          className="cursor-pointer hover:rotate-90 hover:transition-all hover:ease-in-out hover:duration-500 "
-        />
-      </Button>
+      <SettingsIcon
+        onClick={toggleDrawer("right", true)}
+        style={{
+          color: "white",
+          background: "#1799FB",
+          borderRadius: "50%",
+          fontSize: "1.9rem",
+          padding: "5px",
+        }}
+        className="cursor-pointer hover:rotate-90 hover:transition-all hover:ease-in-out hover:duration-500 "
+      />
       <Drawer
         anchor={"right"}
         open={state["right"]}
         onClose={toggleDrawer("right", false)}
       >
-        <Box
-          className=" p-2"
-          role="presentation"
-          //   onClick={toggleDrawer("right", false)}
-          //   onKeyDown={toggleDrawer("right", false)}
-        >
+        <Box className=" p-2" role="presentation">
           <Box className="p-2">
             <Typography className="text-center p-2">Theme</Typography>
             <Box>

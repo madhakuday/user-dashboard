@@ -44,7 +44,7 @@ const Dashboard = () => {
             <AsideBar setScreenWidth={setScreenWidth} />
           </div>
         </div>
-        <div className={`${screenWidthnum <= 1000 ? "" : "ml-64"} w-full `}>
+        <div className={`${screenWidthnum <= 1000 ? "" : "ml-64"} w-full  `}>
           <DashboardHeader
             setScreenWidth={setScreenWidth}
             screenWidth={screenWidth}
